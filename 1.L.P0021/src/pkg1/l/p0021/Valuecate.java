@@ -74,9 +74,23 @@ public class Valuecate {
                     || result.equalsIgnoreCase("Poor")) {
                 return result;
             } else {
-                System.err.println("Please input string: Excellence, Good, Fair, Poor");
+                System.out.println("Please input string: Excellence, Good, Fair, Poor");
                 System.out.print("Enter again: ");
             }
+        }
+    }
+   public static String checkInputCourse() {
+        //loop until user input correct
+        while (true) {
+            String result = checkinputString();
+            //check input course in java/ .net/ c/c++
+            if (result.equalsIgnoreCase("java")
+                    || result.equalsIgnoreCase(".net")
+                    || result.equalsIgnoreCase("c/c++")) {
+                return result;
+            }
+            System.out.println("There are only three courses: Java, .Net, C/C++");
+            System.out.print("Enter again: ");
         }
     }
    public static boolean checkInputYN() {
@@ -89,7 +103,21 @@ public class Valuecate {
             } else if (result.equalsIgnoreCase("N")) {
                 return false;
             }
-            System.err.println("Please input y/Y or n/N.");
+            System.out.println("Please input y/Y or n/N.");
+            System.out.print("Enter again: ");
+        }
+    }
+   public static boolean checkInputUD() {
+        //loop until user input correct
+        while (true) {
+            String result = checkinputString();
+            //check user input y/Y or n/N
+            if (result.equalsIgnoreCase("U")) {
+                return true;
+            } else if (result.equalsIgnoreCase("D")) {
+                return false;
+            }
+            System.out.println("Please input u/U or d/D.");
             System.out.print("Enter again: ");
         }
     }
@@ -115,6 +143,18 @@ public class Valuecate {
         }
         return true; 
     }
+    public static boolean checkReportExist(ArrayList<Report> lr, String name,
+            String course, int total) {
+        for (Report report : lr) {
+            if (name.equalsIgnoreCase(report.getName())
+                    && course.equalsIgnoreCase(report.getCourse())
+                    && total == report.getTotalCourse()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 /*
     //check experience must be smaller then age
     public static int checkInputExprience(int birthDate) {

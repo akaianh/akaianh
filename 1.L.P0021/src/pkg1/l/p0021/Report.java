@@ -12,10 +12,17 @@ package pkg1.l.p0021;
 public class Report {
     private String name;
     private String course;
-    private String totalCourse;
+    private int totalCourse;
 
     public Report() {
     }
+
+    public Report(String name, String course, int totalCourse) {
+        this.name = name;
+        this.course = course;
+        this.totalCourse = totalCourse;
+    }
+    
 
     public String getName() {
         return name;
@@ -33,11 +40,11 @@ public class Report {
         this.course = course;
     }
 
-    public String getTotalCourse() {
+    public int getTotalCourse() {
         return totalCourse;
     }
 
-    public void setTotalCourse(String totalCourse) {
+    public void setTotalCourse(int totalCourse) {
         this.totalCourse = totalCourse;
     }
     

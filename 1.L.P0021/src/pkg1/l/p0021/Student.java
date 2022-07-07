@@ -9,7 +9,7 @@ package pkg1.l.p0021;
  *
  * @author ADMIN
  */
-public class Student {
+public class Student implements Comparable<Student> {
     private String id;
     private String studentName;
     private String semester;
@@ -54,6 +54,13 @@ public class Student {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+    public int compareTo(Student t) {
+        return t.studentName.compareTo(this.studentName);
+    }
+
+    public void print() {
+        System.out.printf("%-15s%-15s%-15s\n", studentName, semester, courseName);
     }
     
 }
